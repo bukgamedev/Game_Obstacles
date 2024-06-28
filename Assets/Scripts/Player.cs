@@ -26,25 +26,25 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W)) //W'a basýlý tutarsam yürümeeyi baþlat.
         {
-            Player_Animator.SetTrigger("walk");
-            Player_Animator.ResetTrigger("idle");
+            Player_Animator.SetTrigger("Walk");
+            Player_Animator.ResetTrigger("Idle");
             walking = true;
         }
         if (Input.GetKeyUp(KeyCode.W)) // Eðer W tuþundan elimi çekersem yürümeyi durdur.
         {
-            Player_Animator.ResetTrigger("walk");
-            Player_Animator.SetTrigger("idle");
+            Player_Animator.ResetTrigger("Walk");
+            Player_Animator.SetTrigger("Idle");
             walking = false;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Player_Animator.SetTrigger("walkback");
-            Player_Animator.ResetTrigger("idle");
+            Player_Animator.SetTrigger("Walk_Back");
+            Player_Animator.ResetTrigger("Idle");
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            Player_Animator.ResetTrigger("walkback");
-            Player_Animator.SetTrigger("idle");
+            Player_Animator.ResetTrigger("Walk_Back");
+            Player_Animator.SetTrigger("Idle");
         }
         if (Input.GetKey(KeyCode.A)) //Klavyeden a tuþuna basýlýrsa
         {
@@ -59,14 +59,14 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift)) // Sol Shift tuþuna basýlýrsa
             {
                 Walk_Speed = Walk_Speed + Run_Speed; // Karakterin yürüme hýzýný, Yürüme hýzý ve Koþma hýzýnýn toplamýna eþitle. 
-                Player_Animator.SetTrigger("run"); //Karakterin koþma animasyonunu oynat.
-                Player_Animator.ResetTrigger("walk"); //Karakter koþacaðý için walk Animasyonunu resetle.
+                Player_Animator.SetTrigger("Run"); //Karakterin koþma animasyonunu oynat.
+                Player_Animator.ResetTrigger("Walk"); //Karakter koþacaðý için walk Animasyonunu resetle.
             }
             if (Input.GetKeyUp(KeyCode.LeftShift)) //Sol Shift tuþundan parmak çekilirse
             {
                 Walk_Speed = OldWalking_Speed; //Yürüme hýzýný, eski yürüme hýzýna eþitle.
-                Player_Animator.ResetTrigger("run"); //Karakter koþmayý durduracaðý için, koþma animasyonunu resetle.
-                Player_Animator.SetTrigger("walk"); ////Karakterin yürüme animasyonunu oynat.
+                Player_Animator.ResetTrigger("Run"); //Karakter koþmayý durduracaðý için, koþma animasyonunu resetle.
+                Player_Animator.SetTrigger("Walk"); ////Karakterin yürüme animasyonunu oynat.
             }
         }
     }
