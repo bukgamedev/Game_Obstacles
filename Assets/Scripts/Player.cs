@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed;//Karakterin koþma hýzý
+    public float speed;//Karakterin Yürüme hýzý
+    public float Movement_speed = 125f;//Karakterin Yürüme hýzý
     public float rotation_Speed; //Dönme hýzý
     public float Jump_Speed; //zýplama hýzý
+    public bool Is_Moving; //Kareket var mý? 
     public float JumpButtonGracePediod; //Zýplama hýzý süresi
     public Animator animator; //Karakterin animator kontrolü
     public CharacterController characterController; //Karakter kontrol component'ý
@@ -56,15 +55,26 @@ public class Player : MonoBehaviour
         Vector3 velocity = movementDirection * magnitude;
         velocity.y = ySpeed;
         characterController.Move(velocity * Time.deltaTime);
-        if (movementDirection != Vector3.zero)
+        if (movementDirection != Vector3.zero) 
         {
-            animator.SetBool("IsRunning", true);
+            animator.SetBool("Walk", true);
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotation_Speed * Time.deltaTime);
         }
         else
         {
+            animator.SetBool("Walk", false);
+        }
+        if (Input.GetKey(KeyCode.LeftShift) & Is_Moving == true) //Shift'e basýnca karakter koþacak
+        {
+            animator.SetBool("IsRunning", true);
+            transform.position += transform.forward * Time.deltaTime * Movement_speed;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift)) //Sadece Shift'i býrakýrsak karakter yürüyecek.
+        {
             animator.SetBool("IsRunning", false);
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotation_Speed * Time.deltaTime);
         }
     }
 }

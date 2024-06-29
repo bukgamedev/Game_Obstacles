@@ -375,8 +375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  Movement_speed: 1
   rotation_Speed: 720
   Jump_Speed: 5
+  Is_Moving: 1
   JumpButtonGracePediod: 0.2
   animator: {fileID: 839302577}
   characterController: {fileID: 839302578}
@@ -400,8 +402,8 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2386,6 +2388,7 @@ GameObject:
   - component: {fileID: 8307813400668474322}
   - component: {fileID: 2128355836894840686}
   - component: {fileID: 8577611361688396438}
+  - component: {fileID: 8577611361688396439}
   m_Layer: 0
   m_Name: Cube.054
   m_TagString: Untagged
@@ -3019,7 +3022,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3684386514306563941}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 47.04
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3033,10 +3036,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &6220210968147139299
 Transform:
@@ -3065,6 +3068,7 @@ GameObject:
   - component: {fileID: 9105937448375785287}
   - component: {fileID: 4773068486684116489}
   - component: {fileID: 9105937448375785288}
+  - component: {fileID: 9105937448375785289}
   m_Layer: 0
   m_Name: Circle.004
   m_TagString: Untagged
@@ -3245,6 +3249,7 @@ GameObject:
   - component: {fileID: 1388646561067185968}
   - component: {fileID: 8472474637704701597}
   - component: {fileID: 3019315682554119512}
+  - component: {fileID: 8472474637704701598}
   m_Layer: 0
   m_Name: Circle.018
   m_TagString: Untagged
@@ -3462,8 +3467,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  Movement_speed: 0
   rotation_Speed: 0
   Jump_Speed: 0
+  Is_Moving: 0
   JumpButtonGracePediod: 0
   animator: {fileID: 0}
   characterController: {fileID: 0}
@@ -3590,6 +3597,7 @@ GameObject:
   - component: {fileID: 3088277563778607799}
   - component: {fileID: 9042491289628651137}
   - component: {fileID: 4334531377811241436}
+  - component: {fileID: 9042491289628651138}
   m_Layer: 0
   m_Name: Circle.023
   m_TagString: Untagged
@@ -3777,8 +3785,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  Movement_speed: 0
   rotation_Speed: 0
   Jump_Speed: 0
+  Is_Moving: 0
   JumpButtonGracePediod: 0
   animator: {fileID: 0}
   characterController: {fileID: 0}
@@ -3917,6 +3927,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7109989669052667470}
   m_Mesh: {fileID: 7004783832934855251, guid: 5cea982b36eea2846ba058e9e0235cef, type: 3}
+--- !u!65 &8472474637704701598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109989669052667470}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008164857, y: 0.00049739843, z: 0.00062385976}
+  m_Center: {x: 0.0014305783, y: 0.000028777333, z: 0.00066929753}
 --- !u!4 &8489470598144258587
 Transform:
   m_ObjectHideFlags: 0
@@ -4001,6 +4032,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &8577611361688396439
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262787526269977204}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1997392669490731943, guid: 5cea982b36eea2846ba058e9e0235cef, type: 3}
 --- !u!4 &8682381957693408958
 Transform:
   m_ObjectHideFlags: 0
@@ -4088,6 +4141,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7941671932210446463}
   m_Mesh: {fileID: -3578723373924186483, guid: 5cea982b36eea2846ba058e9e0235cef, type: 3}
+--- !u!64 &9042491289628651138
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941671932210446463}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3578723373924186483, guid: 5cea982b36eea2846ba058e9e0235cef, type: 3}
 --- !u!4 &9078949020624940838
 Transform:
   m_ObjectHideFlags: 0
@@ -4132,6 +4207,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &9105937448375785289
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335250783377799675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6857689473578963052, guid: 5cea982b36eea2846ba058e9e0235cef, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
