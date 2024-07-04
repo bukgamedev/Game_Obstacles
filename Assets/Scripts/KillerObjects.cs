@@ -12,4 +12,5 @@ public class KillerObjects : MonoBehaviour
             Debug.Log("Karakter öldü");
         }
     }
+    
 }
