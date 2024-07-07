@@ -3861,6 +3861,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9186877640575307432, guid: 13433b6d5ecc7624d8bbb875a4699873, type: 3}
+      propertyPath: delay
+      value: 3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 9186877640575307432, guid: 13433b6d5ecc7624d8bbb875a4699873, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 9186877640575307432, guid: 13433b6d5ecc7624d8bbb875a4699873, type: 3}
+      propertyPath: ExplosionEffectPrefab
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+    - target: {fileID: 9186877640575307432, guid: 13433b6d5ecc7624d8bbb875a4699873, type: 3}
       propertyPath: explosionEffectPrefab
       value: 
       objectReference: {fileID: 573888260}
