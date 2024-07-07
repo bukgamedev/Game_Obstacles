@@ -7,8 +7,8 @@ public class Cannon : MonoBehaviour
     public GameObject CannonBallPrefab; // Gülle prefabý
     public Transform FirePoint; // Topun gülleyi atacaðý nokta
     public float FireInterval = 1f; // 5 saniyede bir ateþleme
-    public float launchForceForward = 15f; // Gülleyi ileriye atma kuvveti -Ýstediðin deðeri gir.-
-    public float launchForceUpward = 3f; // Gülleyi yukarýya atma kuvveti -Ýstediðin deðeri gir.-
+    public float launchForceForward = 20f; // Gülleyi ileriye atma kuvveti -Ýstediðin deðeri gir.-
+    public float launchForceUpward = 4f; // Gülleyi yukarýya atma kuvveti -Ýstediðin deðeri gir.-
 
     public GameObject explosionEffectPrefab; // Patlama efekti prefabý
     public float explosionRadius = 1f; // 2 metre çapýndaki çemberin yarýçapý
