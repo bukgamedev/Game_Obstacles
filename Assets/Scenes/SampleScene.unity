@@ -1281,6 +1281,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.878
       objectReference: {fileID: 0}
+    - target: {fileID: -2093772787462966335, guid: 84ead1f95c5c7ba4e805e6ace05f7821, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000001862645
+      objectReference: {fileID: 0}
     - target: {fileID: -466329591000292508, guid: 84ead1f95c5c7ba4e805e6ace05f7821, type: 3}
       propertyPath: m_Name
       value: Saw
