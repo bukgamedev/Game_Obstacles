@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private float originalStepOffset; //Karakter kontrol component'ý içerisindeki ayar
     private float? lastGroundedTÝme;
     private float? JumpButtonPressedTime;
+    private Transform platformTransform = null; //Platformun transform deðeri
 
     void Start()
     {
@@ -86,6 +87,28 @@ public class Player : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotation_Speed * Time.deltaTime);
         }
+
+        if (platformTransform != null)
+        {
+            transform.position = platformTransform.position;
+            transform.rotation = platformTransform.rotation;
+        }
     }
-   
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("RotatingPlatform"))
+        {
+            platformTransform = collision.transform;
+            transform.SetParent(platformTransform);
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("RotatingPlatform"))
+        {
+            transform.SetParent(null);
+            platformTransform = null;
+        }
+    }
 }
