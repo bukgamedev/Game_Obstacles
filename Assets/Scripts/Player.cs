@@ -89,10 +89,10 @@ public class Player : MonoBehaviour
         }
 
         if (platformTransform != null)
-        {
-            transform.position = platformTransform.position;
-            transform.rotation = platformTransform.rotation;
-        }
+    {
+        transform.position = platformTransform.position;
+        transform.rotation = platformTransform.rotation;
+    }
     }
     void OnCollisionEnter(Collision collision)
     {
