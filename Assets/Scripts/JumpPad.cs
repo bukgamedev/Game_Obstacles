@@ -5,13 +5,28 @@ using UnityEngine.UIElements;
 
 public class JumpPad : MonoBehaviour
 {
-    public float JumpPower; //Zýplatma gücü
-    private void OnCollisionEnter(Collision collision)
+    public float JumpPower = 1f; //Zýplatma gücü
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.TryGetComponent(out Rigidbody rb))
+        if (other.CompareTag("Player"))
         {
-            rb.AddForce(transform.up * JumpPower); //Karakter yukarý veya çapraz zýplayacaðý için transform.up kullanabilirim.
+            CharacterController characterController = other.GetComponent<CharacterController>();
+            if (characterController != null)
+            {
+                StartCoroutine(ApplyJump(characterController));
+            }
         }
     }
-    
+    private IEnumerator ApplyJump(CharacterController characterController)
+    {
+        float elapsedTime = 0f;
+        float duration = 0.1f; // Harekete ne kadar süre boyunca kuvvet uygulanacak
+
+        while (elapsedTime < duration)
+        {
+            characterController.Move(Vector3.up * JumpPower * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 }
