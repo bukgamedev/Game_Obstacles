@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Animator animator; //Karakterin animator kontrolü
     public CharacterController characterController; //Karakter kontrol component'ý
     private float ySpeed; //Y eksenindeki hýzý
+    //private float ySpeed; //Y eksenindeki hýzý
     private float originalStepOffset; //Karakter kontrol component'ý içerisindeki ayar
     private float? lastGroundedTÝme;
     private float? JumpButtonPressedTime;
