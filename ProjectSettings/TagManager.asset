@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Ground
   - RotatingPlatform
+  - Press_Obstacle
   layers:
   - Default
   - TransparentFX

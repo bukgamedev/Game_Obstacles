@@ -13,12 +13,10 @@ public class Player : MonoBehaviour
     public Animator animator; //Karakterin animator kontrolü
     public CharacterController characterController; //Karakter kontrol component'ý
     private float ySpeed; //Y eksenindeki hýzý
-    //private float ySpeed; //Y eksenindeki hýzý
     private float originalStepOffset; //Karakter kontrol component'ý içerisindeki ayar
     private float? lastGroundedTÝme;
     private float? JumpButtonPressedTime;
     private Transform platformTransform = null; //Platformun transform deðeri
-
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -67,7 +65,7 @@ public class Player : MonoBehaviour
         Vector3 velocity = movementDirection * magnitude;
         velocity.y = ySpeed;
         characterController.Move(velocity * Time.deltaTime);
-        if (movementDirection != Vector3.zero) 
+        if (movementDirection != Vector3.zero)
         {
             animator.SetBool("Walk", true);
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
@@ -88,12 +86,11 @@ public class Player : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotation_Speed * Time.deltaTime);
         }
-
         if (platformTransform != null)
-    {
-        transform.position = platformTransform.position;
-        transform.rotation = platformTransform.rotation;
-    }
+        {
+            transform.position = platformTransform.position;
+            transform.rotation = platformTransform.rotation;
+        }
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -102,8 +99,14 @@ public class Player : MonoBehaviour
             platformTransform = collision.transform;
             transform.SetParent(platformTransform);
         }
+        if (collision.gameObject.CompareTag("Press_Obstacle"))// Karakter Press engeline dokunursa
+        {
+            // Karakterin scale x deðerini 0.1f yap
+            Vector3 newScale = transform.localScale;
+            newScale.x = 0.1f;
+            transform.localScale = newScale;
+        }
     }
-
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("RotatingPlatform"))
