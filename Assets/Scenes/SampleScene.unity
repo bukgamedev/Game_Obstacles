@@ -1020,6 +1020,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: -410346612876149462, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -410346612876149462, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -410346612876149462, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -410346612876149462, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -410346612876149462, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3c3e111567091642adce1ff6890f602, type: 3}
       propertyPath: m_Name
       value: Rotating_Spike_Platform
@@ -1059,7 +1079,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2542943783081841874, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577592413}
   m_SourcePrefab: {fileID: 100100000, guid: e3c3e111567091642adce1ff6890f602, type: 3}
 --- !u!95 &1408021790
 Animator:
@@ -1516,6 +1539,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1577592411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2542943783081841874, guid: e3c3e111567091642adce1ff6890f602, type: 3}
+  m_PrefabInstance: {fileID: 1398006321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1577592413
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577592411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90b53995616470044ac7d74057697a2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1611819064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4005363796782682704, guid: e12472da80d69364393628cb9b138fa5, type: 3}
