@@ -3,7 +3,42 @@ guid: 2f71242fc6223334c9c00b2fee5e5ab2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete_034
+    second: {fileID: 2100000, guid: 006af7aee34452b4d9a0a9130f5852df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hook_High_Metal_1.001
+    second: {fileID: 2100000, guid: 5597c5369fd58e242ac2a46bd7b05aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hook_Low.001
+    second: {fileID: 2100000, guid: 2c31a6c88c8896e4cb1dbe84589c1799, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hook_LowMetal_1.001
+    second: {fileID: 2100000, guid: 868826087554bc7428745335b9bdf072, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal029.001
+    second: {fileID: 2100000, guid: f4487bd01535d8d479fece011f760cf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal046a_2
+    second: {fileID: 2100000, guid: 41dd212cf09b1904fa0318c43a6a3f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_029_2
+    second: {fileID: 2100000, guid: d0dd5662f8e44bc44a46aaf5dc2c04e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
