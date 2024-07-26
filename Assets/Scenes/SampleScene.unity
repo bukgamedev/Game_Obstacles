@@ -8432,8 +8432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points:
-  - {x: -15, y: 0, z: 0}
-  - {x: 15, y: 0, z: 0}
+  - {x: 0, y: 0, z: -15}
+  - {x: 0, y: 0, z: 15}
   Point_Number: 0
   tolerance: 0
   speed: 4
