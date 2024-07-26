@@ -8,37 +8,37 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Concrete_034
-    second: {fileID: 2100000, guid: 006af7aee34452b4d9a0a9130f5852df, type: 2}
+    second: {fileID: 2100000, guid: cad3b9807fdabad4481756790305222a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hook_High_Metal_1.001
-    second: {fileID: 2100000, guid: 5597c5369fd58e242ac2a46bd7b05aa0, type: 2}
+    second: {fileID: 2100000, guid: b70200718661af647aa2993b59e91666, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hook_Low.001
-    second: {fileID: 2100000, guid: 2c31a6c88c8896e4cb1dbe84589c1799, type: 2}
+    second: {fileID: 2100000, guid: e171d7ebbec37794b811445629dd4d50, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hook_LowMetal_1.001
-    second: {fileID: 2100000, guid: 868826087554bc7428745335b9bdf072, type: 2}
+    second: {fileID: 2100000, guid: 3235b99cc9b0a0240b33f5c240be3724, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal029.001
-    second: {fileID: 2100000, guid: f4487bd01535d8d479fece011f760cf5, type: 2}
+    second: {fileID: 2100000, guid: 21325e74dcff0684ab6991aaf53313b7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal046a_2
-    second: {fileID: 2100000, guid: 41dd212cf09b1904fa0318c43a6a3f21, type: 2}
+    second: {fileID: 2100000, guid: 46cd6f7bf585f00488902d686757963f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal_029_2
-    second: {fileID: 2100000, guid: d0dd5662f8e44bc44a46aaf5dc2c04e5, type: 2}
+    second: {fileID: 2100000, guid: a358e0d4fa6bc0045be57d05097bc12d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
