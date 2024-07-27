@@ -11,7 +11,6 @@ public class Moving_Platform : MonoBehaviour
     public float tolerance;
     public float speed;
     public float Delay_Time;
-
     private float delay_Start;
     public bool automatic;
     public void Start()
@@ -47,7 +46,7 @@ public class Moving_Platform : MonoBehaviour
     {
         if (automatic)
         {
-            if (Time.time * delay_Start > Delay_Time)
+            if (Time.time - delay_Start > Delay_Time)
             {
                 NextPlatform();
             }
@@ -61,5 +60,13 @@ public class Moving_Platform : MonoBehaviour
             Point_Number = 0;
         }
         Current_Target = Points[Point_Number];
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.transform.parent = transform; //Eðer karakter box collider'a girerse karakteri bu objenin child'ý yap.
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        other.transform.parent = null;
     }
 }
