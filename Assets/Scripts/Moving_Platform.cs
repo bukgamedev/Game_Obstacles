@@ -32,7 +32,7 @@ public class Moving_Platform : MonoBehaviour
             UpdateTarget();
         }
     }
-    void MovePlatform()
+    public void MovePlatform()
     {
         Vector3 heading = Current_Target - transform.position;
         transform.position += (heading / heading.magnitude) * speed * Time.deltaTime;
@@ -42,7 +42,7 @@ public class Moving_Platform : MonoBehaviour
             delay_Start = Time.time;
         }
     }
-    void UpdateTarget()
+    public void UpdateTarget()
     {
         if (automatic)
         {
@@ -52,7 +52,7 @@ public class Moving_Platform : MonoBehaviour
             }
         }
     }
-    void NextPlatform()
+    public void NextPlatform()
     {
         Point_Number++;
         if (Point_Number >= Points.Length)

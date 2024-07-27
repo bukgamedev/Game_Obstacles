@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Platform_Trigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Moving_Platform Platform; //Moving_Platform script dosyasýndaki platform'u burada da kullanabilirim artýk.
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Platform.NextPlatform();
     }
 }
