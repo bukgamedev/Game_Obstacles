@@ -13,6 +13,8 @@ public class Moving_Platform : MonoBehaviour
     public float Delay_Time;
     private float delay_Start;
     public bool automatic;
+    public CharacterController characterController;
+    public Player Player;
     public void Start()
     {
         if (Points.Length > 0)
@@ -63,10 +65,12 @@ public class Moving_Platform : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.parent = transform; //Eðer karakter box collider'a girerse karakteri bu objenin child'ý yap.
+        
+        //other.transform.parent = transform; //Eðer karakter box collider'a girerse karakteri bu objenin child'ý yap.
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        other.transform.parent = null;
+        
+        //other.transform.parent = null;
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Rigidbody rb;
     public float speed;//Karakterin Yürüme hýzý
     public float Movement_speed = 125f;//Karakterin Yürüme hýzý
     public float rotation_Speed; //Dönme hýzý
