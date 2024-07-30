@@ -46,5 +46,13 @@ public class Platform : MonoBehaviour
             Timer = true;
         }
     }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag=="Player")
+        {
+            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();//Karakterin rb özelliði.
+            rb.velocity = new Vector3(this.rb.velocity.x,rb.velocity.y, this.rb.velocity.z); //Kodun kendi içerisindeki rb özelliðine ulaþmak için this.rb yazdým. Yani bu rb, Platformun rb özelliði.
+        }
+    }
 
 }
