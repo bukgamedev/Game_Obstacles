@@ -8,6 +8,9 @@ public class Platform : MonoBehaviour
     public float Speed;
     public float Force_Speed;
     public bool Timer;
+
+    public float time;
+    public float Interval; //Aralýk
     private void Start()
     {
         Force_Speed = Speed;
@@ -17,16 +20,21 @@ public class Platform : MonoBehaviour
         rb.velocity = Vector3.forward * Force_Speed;
         if (Timer)
         {
-            if (Force_Speed>0)
+            time += Time.deltaTime;
+            if (time > Interval)
             {
-                Force_Speed = -Speed; //Platform bir yere dokunduðunda - hýzda geriye doðru gidecek.
-                Timer = false; 
-            }
-            else if(Force_Speed < 0)
-            {
-                Force_Speed = Speed;
-                Timer = false;
-
+                if (Force_Speed > 0)
+                {
+                    Force_Speed = -Speed; //Platform bir yere dokunduðunda - hýzda geriye doðru gidecek.
+                    Timer = false;
+                    time = 0;
+                }
+                else if (Force_Speed < 0)
+                {
+                    Force_Speed = Speed;
+                    Timer = false;
+                    time = 0;
+                }
             }
         }
     }
@@ -38,4 +46,5 @@ public class Platform : MonoBehaviour
             Timer = true;
         }
     }
+
 }
