@@ -1341,7 +1341,6 @@ GameObject:
   m_Component:
   - component: {fileID: 676757310}
   - component: {fileID: 676757309}
-  - component: {fileID: 676757308}
   - component: {fileID: 676757307}
   - component: {fileID: 676757306}
   - component: {fileID: 676757305}
@@ -1447,29 +1446,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &676757308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676757303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4f0a8cc1118ca4799b1410032ad334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 676757305}
-  speed: 5
-  Movement_speed: 15
-  rotation_Speed: 720
-  Jump_Speed: 6
-  Is_Moving: 1
-  Is_Jumping: 0
-  Is_Grounded: 1
-  JumpButtonGracePediod: 0
-  animator: {fileID: 676757307}
-  characterController: {fileID: 0}
 --- !u!114 &676757309
 MonoBehaviour:
   m_ObjectHideFlags: 0
