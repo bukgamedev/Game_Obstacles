@@ -23,15 +23,18 @@ public class Player_2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
+    }
+    void Move()
+    {
         Vector3 CurrentVelocity = rb.velocity; // Karakterin mevcut hýzýný alýr.
-        Vector3 TargetVelocity = new Vector3(move.x,0,move.y); // Hareket girdisinden hedef hýzý oluþturur.
+        Vector3 TargetVelocity = new Vector3(move.x, 0, move.y); // Hareket girdisinden hedef hýzý oluþturur.
         TargetVelocity *= speed; // Hedef hýzý karakterin hareket hýzý ile çarpar.
         TargetVelocity = transform.TransformDirection(TargetVelocity); // Hedef hýzý dünya koordinatlarýna dönüþtürür.
         Vector3 VelocityChange = (TargetVelocity - CurrentVelocity);// Mevcut hýz ile hedef hýz arasýndaki farký hesaplar.
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
     }
-
     // Start is called before the first frame update
     void Start()
     {
