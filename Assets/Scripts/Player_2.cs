@@ -49,6 +49,7 @@ public class Player_2 : MonoBehaviour
 
         //Bakýþ için
         LookRotation += (-look.y * sensitivity);
+        LookRotation = Mathf.Clamp(LookRotation, -90, 90); //Kameranýn bakýþ açýlarýný sýnýrlamak için.
         CameraHolder.transform.eulerAngles = new Vector3(LookRotation, CameraHolder.transform.eulerAngles.y, CameraHolder.transform.eulerAngles.z);
     }
 }
