@@ -23,7 +23,7 @@ public class Player_2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+        Move();
     }
     void Move()
     {
