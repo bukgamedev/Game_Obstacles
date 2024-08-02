@@ -8,7 +8,7 @@ public class Player_2 : MonoBehaviour
     public Rigidbody rb; //Karakterin Rigidbody Componenti.
     public GameObject CameraHolder; //Karakterin çocugu olan kamera tutucu objesi.
     public float speed; // Karakterin hareket hýzý.
-    public float sensiivity; // Kamera duyarlýlýðý.
+    public float sensitivity; // Kamera duyarlýlýðý.
     public float MaxForce; // Kamera duyarlýlýðý.
     private Vector2 move, look; // Hareket ve bakýþ yönlerini tutan vektörler.
     private float LookRotation; //Kamera bakýþ açýsýný tutan deðiþken.
@@ -42,8 +42,13 @@ public class Player_2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        //Dönüþ için
+        transform.Rotate(Vector3.up * look.x * sensitivity);
+
+        //Bakýþ için
+        LookRotation += (-look.y * sensitivity);
+        CameraHolder.transform.eulerAngles = new Vector3(LookRotation, CameraHolder.transform.eulerAngles.y, CameraHolder.transform.eulerAngles.z);
     }
 }
