@@ -32,6 +32,7 @@ public class Player_2 : MonoBehaviour
         TargetVelocity *= speed; // Hedef hýzý karakterin hareket hýzý ile çarpar.
         TargetVelocity = transform.TransformDirection(TargetVelocity); // Hedef hýzý dünya koordinatlarýna dönüþtürür.
         Vector3 VelocityChange = (TargetVelocity - CurrentVelocity);// Mevcut hýz ile hedef hýz arasýndaki farký hesaplar.
+        VelocityChange = new Vector3(VelocityChange.x,0,VelocityChange.z); //karakterin direkt olarak düþmesini saðladým.
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
     }
