@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Player_2 : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class Player_2 : MonoBehaviour
     public GameObject CameraHolder; //Karakterin çocugu olan kamera tutucu objesi.
     public float speed; // Karakterin hareket hýzý.
     public float sensitivity; // Kamera duyarlýlýðý.
-    public float MaxForce; // Kamera duyarlýlýðý.
+    public float MaxForce; // Makisumum kuvvet.
+    public float JumpForce; // zýplama kuvveti.
     private Vector2 move, look; // Hareket ve bakýþ yönlerini tutan vektörler.
     private float LookRotation; //Kamera bakýþ açýsýný tutan deðiþken.
+    public bool is_Grounded;//Karakter zeminde mi?
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -31,7 +34,12 @@ public class Player_2 : MonoBehaviour
     }
     void Jump()
     {
-
+        Vector3 JumpForces = Vector3.zero;
+        if (Grounded) //Eðer karakter zemindeyse,
+        {
+            JumpForces = Vector3.up * JumpForce; 
+        }
+        rb.AddForce(JumpForces, ForceMode.VelocityChange);
     }
     void Move()
     {
