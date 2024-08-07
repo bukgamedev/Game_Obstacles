@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+
 
 public class Player_2 : MonoBehaviour
 {
@@ -35,7 +33,7 @@ public class Player_2 : MonoBehaviour
     void Jump()
     {
         Vector3 JumpForces = Vector3.zero;
-        if (Grounded) //Eðer karakter zemindeyse,
+        if (is_Grounded) //Eðer karakter zemindeyse,
         {
             JumpForces = Vector3.up * JumpForce; 
         }
@@ -73,5 +71,9 @@ public class Player_2 : MonoBehaviour
     void LateUpdate()
     {
         Look();
+    }
+    public void SetGrounded(bool state) 
+    {
+        is_Grounded=state; //is_Grounded deðiþkenini State'e eþitle 
     }
 }
