@@ -36,6 +36,17 @@ public class Player_2 : MonoBehaviour
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
     }
+    void Look()
+    {
+        //Dönüþ için
+        transform.Rotate(Vector3.up * look.x * sensitivity);
+
+        //Bakýþ için
+        LookRotation += (-look.y * sensitivity);
+        LookRotation = Mathf.Clamp(LookRotation, -90, 90); //Kameranýn bakýþ açýlarýný sýnýrlamak için.
+        CameraHolder.transform.eulerAngles = new Vector3(LookRotation, CameraHolder.transform.eulerAngles.y, CameraHolder.transform.eulerAngles.z);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +56,5 @@ public class Player_2 : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //Dönüþ için
-        transform.Rotate(Vector3.up * look.x * sensitivity);
-
-        //Bakýþ için
-        LookRotation += (-look.y * sensitivity);
-        LookRotation = Mathf.Clamp(LookRotation, -90, 90); //Kameranýn bakýþ açýlarýný sýnýrlamak için.
-        CameraHolder.transform.eulerAngles = new Vector3(LookRotation, CameraHolder.transform.eulerAngles.y, CameraHolder.transform.eulerAngles.z);
     }
 }
