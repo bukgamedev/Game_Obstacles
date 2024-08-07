@@ -21,10 +21,13 @@ public class Player_2 : MonoBehaviour
     {
         look = context.ReadValue<Vector2>(); //bakýþ girdisini alýr ve 'look' vektörüne atar.
     }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        Jump();
+    }
     private void FixedUpdate()
     {
         Move();
-        Jump();
     }
     void Jump()
     {
