@@ -24,6 +24,11 @@ public class Player_2 : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Jump();
+    }
+    void Jump()
+    {
+
     }
     void Move()
     {
@@ -56,5 +61,6 @@ public class Player_2 : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        Look();
     }
 }
