@@ -13,4 +13,13 @@ public class Ground_Check : MonoBehaviour
         }
         Player_2.SetGrounded(true);
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == Player_2.gameObject)
+        {
+            return;
+        }
+        Player_2.SetGrounded(false); //Karakter zeminden ayrýldýysa setgrounded False olsun.
+    }
+    
 }
