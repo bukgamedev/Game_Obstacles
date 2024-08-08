@@ -1604,7 +1604,7 @@ MonoBehaviour:
   speed: 4
   sensitivity: 0.1
   MaxForce: 1
-  JumpForce: 0
+  JumpForce: 3
   is_Grounded: 0
 --- !u!114 &676757312
 MonoBehaviour:
@@ -1704,7 +1704,19 @@ MonoBehaviour:
     m_ActionId: c988f3de-c6b5-4d9f-b836-5177afbf7783
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 676757311}
+        m_TargetAssemblyTypeName: Player_2, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 52ee2617-df58-4886-bb2c-8aa539e6971e
     m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
@@ -5513,6 +5525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fae12e9ee7c1414ebfb717e464a0c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_2: {fileID: 676757311}
 --- !u!65 &1837757024
 BoxCollider:
   m_ObjectHideFlags: 0
