@@ -76,4 +76,5 @@ public class Player_2 : MonoBehaviour
     {
         is_Grounded=state; //is_Grounded deðiþkenini State'e eþitle 
     }
+    
 }

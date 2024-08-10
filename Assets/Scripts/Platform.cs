@@ -41,17 +41,19 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Untagged")
+        // Sadece "Player" etiketli objelerle etkileþime girsin
+        if (collision.gameObject.CompareTag("Untagged"))
         {
             Timer = true;
         }
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag=="Player")
+        // Sadece "Player" etiketli objelerle etkileþime girsin
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();//Karakterin rb özelliði.
-            rb.velocity = new Vector3(this.rb.velocity.x,rb.velocity.y, this.rb.velocity.z); //Kodun kendi içerisindeki rb özelliðine ulaþmak için this.rb yazdým. Yani bu rb, Platformun rb özelliði.
+            // Karakteri platforma baðla
+            collision.transform.parent = transform;
         }
     }
 
