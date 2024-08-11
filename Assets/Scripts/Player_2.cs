@@ -10,6 +10,8 @@ public class Player_2 : MonoBehaviour
     public Animator animator; //Karakterin animator kontrolü
     public float walkSpeed = 5f; //Karakterin yürüme hýzý
     public float sprintSpeed = 10f; //Karakterin koþma hýzý
+    private bool Run = false; //Player Input componentindeki Run actionu için
+
     public float sensitivity; // Kamera duyarlýlýðý.
     public float MaxForce; // Makisumum kuvvet.
     public float JumpForce; // zýplama kuvveti.
@@ -52,6 +54,10 @@ public class Player_2 : MonoBehaviour
         VelocityChange = new Vector3(VelocityChange.x,0,VelocityChange.z); //karakterin direkt olarak düþmesini saðladým.
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
+    }
+    private void Onrun(InputValue value) // Player Input comp'daki Run'dan gelen deðeri alýr
+    {
+        Run = value.isPressed; // Koþma tuþuna basýlýp basýlmadýðýný kontrol etmek için
     }
     void Look()
     {
