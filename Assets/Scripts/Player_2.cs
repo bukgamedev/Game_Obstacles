@@ -6,7 +6,10 @@ public class Player_2 : MonoBehaviour
 {
     public Rigidbody rb; //Karakterin Rigidbody Componenti.
     public GameObject CameraHolder; //Karakterin çocugu olan kamera tutucu objesi.
-    public float speed; // Karakterin hareket hýzý.
+    public float speed; // Karakterin hareket hýzý
+    public Animator animator; //Karakterin animator kontrolü
+    public float walkSpeed = 5f; //Karakterin yürüme hýzý
+    public float sprintSpeed = 10f; //Karakterin koþma hýzý
     public float sensitivity; // Kamera duyarlýlýðý.
     public float MaxForce; // Makisumum kuvvet.
     public float JumpForce; // zýplama kuvveti.
@@ -61,13 +64,12 @@ public class Player_2 : MonoBehaviour
         CameraHolder.transform.eulerAngles = new Vector3(LookRotation, CameraHolder.transform.eulerAngles.y, CameraHolder.transform.eulerAngles.z);
 
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         Look();
