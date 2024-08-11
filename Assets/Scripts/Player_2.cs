@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 
 public class Player_2 : MonoBehaviour
@@ -11,7 +12,7 @@ public class Player_2 : MonoBehaviour
     public float walkSpeed = 5f; //Karakterin yürüme hýzý
     public float sprintSpeed = 10f; //Karakterin koþma hýzý
     private bool Run = false; //Player Input componentindeki Run actionu için
-
+    private Vector2 input;
     public float sensitivity; // Kamera duyarlýlýðý.
     public float MaxForce; // Makisumum kuvvet.
     public float JumpForce; // zýplama kuvveti.
@@ -31,9 +32,23 @@ public class Player_2 : MonoBehaviour
     {
         Jump();
     }
+    public void Onrun(InputValue value) // Player Input comp'daki Run'dan gelen deðeri alýr
+    {
+        Sprint();
+    }
     private void FixedUpdate()
     {
         Move();
+    }
+    private void Update()
+    {
+        
+    }
+    void Sprint() //Karakterin koþma aksiyonu için
+    {
+        float speed = Run ? sprintSpeed : walkSpeed;// Hareket hýzýný koþma durumuna göre ayarla
+        Vector3 move = new Vector3(input.x, 0, input.y) * speed;// Hareket yönünü ve hýzýný belirle
+        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);// Hareketi Rigidbody bileþenine uygula
     }
     void Jump()
     {
@@ -55,10 +70,7 @@ public class Player_2 : MonoBehaviour
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
     }
-    private void Onrun(InputValue value) // Player Input comp'daki Run'dan gelen deðeri alýr
-    {
-        Run = value.isPressed; // Koþma tuþuna basýlýp basýlmadýðýný kontrol etmek için
-    }
+    
     void Look()
     {
         //Dönüþ için
