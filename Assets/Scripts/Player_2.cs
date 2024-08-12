@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using static UnityEngine.Rendering.DebugUI;
 
 
 public class Player_2 : MonoBehaviour
@@ -19,7 +20,8 @@ public class Player_2 : MonoBehaviour
     public float JumpForce; // zýplama kuvveti.
     private Vector2 move, look; // Hareket ve bakýþ yönlerini tutan vektörler.
     private float LookRotation; //Kamera bakýþ açýsýný tutan deðiþken.
-    public bool is_Grounded;//Karakter zeminde mi?
+    public bool is_Grounded_2;//Karakter zeminde mi?
+    public bool isJumping; //Karakter zýpladý mý?
 
     void Start()
     {
@@ -37,6 +39,14 @@ public class Player_2 : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (context.performed)
+        {
+            isJumping = true;
+        }
+        else if (context.canceled)
+        {
+            isJumping = false;
+        }
         Jump();
     }
     public void Onrun(InputValue value) // Player Input comp'daki Run'dan gelen deðeri alýr
@@ -60,10 +70,16 @@ public class Player_2 : MonoBehaviour
     void Jump()
     {
         Vector3 JumpForces = Vector3.zero;
-        if (is_Grounded) //Eðer karakter zemindeyse,
+        if (is_Grounded_2) //Eðer karakter zemindeyse,
         {
-            JumpForces = Vector3.up * JumpForce; 
+            JumpForces = Vector3.up * JumpForce;
+            animator.SetBool("Is_Grounded", true);
+            is_Grounded_2 = true;
+            animator.SetBool("Is_Jumping", false);
+            isJumping = false;
+            
         }
+
         rb.AddForce(JumpForces, ForceMode.VelocityChange);
     }
     void Move()
@@ -76,8 +92,11 @@ public class Player_2 : MonoBehaviour
         VelocityChange = new Vector3(VelocityChange.x,0,VelocityChange.z); //karakterin direkt olarak düþmesini saðladým.
         Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
         rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
+
+        bool isMoving = move.magnitude > 0;
+        animator.SetBool("isMoving", isMoving);
     }
-    
+
     void Look()
     {
         //Dönüþ için
@@ -98,7 +117,7 @@ public class Player_2 : MonoBehaviour
     }
     public void SetGrounded(bool state) 
     {
-        is_Grounded=state; //is_Grounded deðiþkenini State'e eþitle 
+        is_Grounded_2=state; //is_Grounded deðiþkenini State'e eþitle 
     }
     
 }

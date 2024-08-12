@@ -1605,10 +1605,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   walkSpeed: 5
   sprintSpeed: 10
+  Character_Animator: {fileID: 0}
   sensitivity: 0.1
   MaxForce: 1
   JumpForce: 3
-  is_Grounded: 0
+  is_Grounded_2: 0
+  isJumping: 0
 --- !u!114 &676757312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7621,7 +7623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919132148917598701
 MonoBehaviour:
   m_ObjectHideFlags: 0
