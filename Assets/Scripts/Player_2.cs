@@ -11,6 +11,7 @@ public class Player_2 : MonoBehaviour
     public Animator animator; //Karakterin animator kontrolü
     public float walkSpeed = 5f; //Karakterin yürüme hýzý
     public float sprintSpeed = 10f; //Karakterin koþma hýzý
+    public Animator Character_Animator; //Karakterin animator kontrolü
     private bool Run = false; //Player Input componentindeki Run actionu için
     private Vector2 input;
     public float sensitivity; // Kamera duyarlýlýðý.
