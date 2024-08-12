@@ -21,6 +21,12 @@ public class Player_2 : MonoBehaviour
     private float LookRotation; //Kamera bakýþ açýsýný tutan deðiþken.
     public bool is_Grounded;//Karakter zeminde mi?
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();// Hareket girdisini alýr ve 'move' vektörüne atar.
@@ -84,10 +90,7 @@ public class Player_2 : MonoBehaviour
 
     }
     
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    
 
     void LateUpdate()
     {
