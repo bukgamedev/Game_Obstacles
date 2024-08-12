@@ -53,29 +53,10 @@ public class Player_2 : MonoBehaviour
             isRunning = false; // Koþmayý durdur
         }
 
-        Sprint(); // Koþma fonksiyonunu çaðýr
     }
     private void FixedUpdate()
     {
         Move();
-    }
-    private void Update()
-    {
-        
-    }
-    void Sprint() //Karakterin koþma aksiyonu için
-    {
-        float currentSpeed = isRunning ? sprintSpeed : walkSpeed; // Koþma hýzýný kontrol et
-        Vector3 targetVelocity = new Vector3(move.x, 0, move.y) * currentSpeed; // Hedef hýzý belirle
-        targetVelocity = transform.TransformDirection(targetVelocity); // Hedef hýzý dünya koordinatlarýna çevir
-
-        Vector3 velocityChange = targetVelocity - rb.velocity; // Hýz deðiþimini hesapla
-        velocityChange.y = 0; // Y ekseninde herhangi bir hýz deðiþikliði yapma
-        velocityChange = Vector3.ClampMagnitude(velocityChange, MaxForce); // Hýz deðiþimini maksimum kuvvetle sýnýrla
-
-        rb.AddForce(velocityChange, ForceMode.VelocityChange); // Rigidbody'ye hýz deðiþimini uygula
-
-        animator.SetBool("isRunning", isRunning); // Animator'a koþma durumunu bildir
     }
     void Jump()
     {
