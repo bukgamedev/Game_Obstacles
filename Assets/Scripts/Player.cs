@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
                 JumpButtonPressedTime = null;
                 lastGroundedTÝme = null;
             }
+
         }
         else
         {

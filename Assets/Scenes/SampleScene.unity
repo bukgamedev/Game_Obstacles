@@ -1611,6 +1611,7 @@ MonoBehaviour:
   JumpForce: 3
   is_Grounded_2: 0
   isJumping: 0
+  isRunning: 0
 --- !u!114 &676757312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,9 +1728,9 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 676757311}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: CancelInvoke
-        m_Mode: 5
+        m_TargetAssemblyTypeName: Player_2, Assembly-CSharp
+        m_MethodName: Onrun
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3683,19 +3684,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.00012340446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: -0.00012340446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3703,7 +3704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a5313d513f593e4d8800d881d91a4be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

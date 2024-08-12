@@ -22,6 +22,7 @@ public class Player_2 : MonoBehaviour
     private float LookRotation; //Kamera bakýþ açýsýný tutan deðiþken.
     public bool is_Grounded_2;//Karakter zeminde mi?
     public bool isJumping; //Karakter zýpladý mý?
+    public bool isRunning; //Karakter koþuyor mu?
 
     void Start()
     {
@@ -39,19 +40,20 @@ public class Player_2 : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
+        Jump();
+    }
+    public void OnRun(InputAction.CallbackContext context) // Player Input comp'daki Run'dan gelen deðeri alýr
+    {
         if (context.performed)
         {
-            isJumping = true;
+            isRunning = true; // Koþmayý baþlat
         }
         else if (context.canceled)
         {
-            isJumping = false;
+            isRunning = false; // Koþmayý durdur
         }
-        Jump();
-    }
-    public void Onrun(InputValue value) // Player Input comp'daki Run'dan gelen deðeri alýr
-    {
-        Sprint();
+
+        Sprint(); // Koþma fonksiyonunu çaðýr
     }
     private void FixedUpdate()
     {
@@ -63,9 +65,17 @@ public class Player_2 : MonoBehaviour
     }
     void Sprint() //Karakterin koþma aksiyonu için
     {
-        float speed = Run ? sprintSpeed : walkSpeed;// Hareket hýzýný koþma durumuna göre ayarla
-        Vector3 move = new Vector3(input.x, 0, input.y) * speed;// Hareket yönünü ve hýzýný belirle
-        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);// Hareketi Rigidbody bileþenine uygula
+        float currentSpeed = isRunning ? sprintSpeed : walkSpeed; // Koþma hýzýný kontrol et
+        Vector3 targetVelocity = new Vector3(move.x, 0, move.y) * currentSpeed; // Hedef hýzý belirle
+        targetVelocity = transform.TransformDirection(targetVelocity); // Hedef hýzý dünya koordinatlarýna çevir
+
+        Vector3 velocityChange = targetVelocity - rb.velocity; // Hýz deðiþimini hesapla
+        velocityChange.y = 0; // Y ekseninde herhangi bir hýz deðiþikliði yapma
+        velocityChange = Vector3.ClampMagnitude(velocityChange, MaxForce); // Hýz deðiþimini maksimum kuvvetle sýnýrla
+
+        rb.AddForce(velocityChange, ForceMode.VelocityChange); // Rigidbody'ye hýz deðiþimini uygula
+
+        animator.SetBool("isRunning", isRunning); // Animator'a koþma durumunu bildir
     }
     void Jump()
     {
@@ -77,24 +87,25 @@ public class Player_2 : MonoBehaviour
             is_Grounded_2 = true;
             animator.SetBool("Is_Jumping", false);
             isJumping = false;
-            
         }
 
         rb.AddForce(JumpForces, ForceMode.VelocityChange);
     }
     void Move()
     {
-        Vector3 CurrentVelocity = rb.velocity; // Karakterin mevcut hýzýný alýr.
-        Vector3 TargetVelocity = new Vector3(move.x, 0, move.y); // Hareket girdisinden hedef hýzý oluþturur.
-        TargetVelocity *= speed; // Hedef hýzý karakterin hareket hýzý ile çarpar.
-        TargetVelocity = transform.TransformDirection(TargetVelocity); // Hedef hýzý dünya koordinatlarýna dönüþtürür.
-        Vector3 VelocityChange = (TargetVelocity - CurrentVelocity);// Mevcut hýz ile hedef hýz arasýndaki farký hesaplar.
-        VelocityChange = new Vector3(VelocityChange.x,0,VelocityChange.z); //karakterin direkt olarak düþmesini saðladým.
-        Vector3.ClampMagnitude(VelocityChange, MaxForce);// Hýz deðiþimini maksimum kuvvetle sýnýrlar.
-        rb.AddForce(VelocityChange, ForceMode.VelocityChange);// Rigidbody'ye hýz deðiþimini uygular.
+        float currentSpeed = isRunning ? sprintSpeed : walkSpeed; // Koþma hýzýný kontrol et
+        Vector3 targetVelocity = new Vector3(move.x, 0, move.y) * currentSpeed; // Hedef hýzý belirle
+        targetVelocity = transform.TransformDirection(targetVelocity); // Hedef hýzý dünya koordinatlarýna çevir
+
+        Vector3 currentVelocity = rb.velocity; // Karakterin mevcut hýzýný alýr.
+        Vector3 velocityChange = targetVelocity - currentVelocity; // Hýz deðiþimini hesapla
+        velocityChange.y = 0; // Y ekseninde herhangi bir hýz deðiþikliði yapma
+        velocityChange = Vector3.ClampMagnitude(velocityChange, MaxForce); // Hýz deðiþimini maksimum kuvvetle sýnýrla
+
+        rb.AddForce(velocityChange, ForceMode.VelocityChange); // Rigidbody'ye hýz deðiþimini uygula
 
         bool isMoving = move.magnitude > 0;
-        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isMoving", isMoving); // Animator'a hareket durumunu bildir
     }
 
     void Look()
