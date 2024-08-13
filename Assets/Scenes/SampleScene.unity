@@ -1577,7 +1577,7 @@ Transform:
   m_GameObject: {fileID: 676757303}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.01, y: -0.15, z: 194.2}
+  m_LocalPosition: {x: -0.04, y: -0.15, z: 194.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1729,7 +1729,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 676757311}
         m_TargetAssemblyTypeName: Player_2, Assembly-CSharp
-        m_MethodName: Onrun
+        m_MethodName: OnRun
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

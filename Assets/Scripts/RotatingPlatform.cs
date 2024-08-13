@@ -7,7 +7,7 @@ public class RotatingPlatform : MonoBehaviour
 
     public float rotationSpeed = 30f;
 
-    void Update()
+    void LateUpdate()
     {
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
     }
