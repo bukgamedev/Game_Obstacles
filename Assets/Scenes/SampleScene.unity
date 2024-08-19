@@ -9231,13 +9231,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3168768021244334181}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00014762208, y: 0.70710677, z: -0.70710677, w: -0.00014762208}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 18.62, y: -0.2345109, z: 230.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180.024}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
 --- !u!1 &2358478878558949116
 GameObject:
   m_ObjectHideFlags: 0
@@ -9822,6 +9822,7 @@ GameObject:
   - component: {fileID: 1665683700649395578}
   - component: {fileID: 3528928516090196400}
   - component: {fileID: 3528928516090196401}
+  - component: {fileID: 3528928516090196402}
   m_Layer: 0
   m_Name: Trap_Door
   m_TagString: Untagged
@@ -10212,6 +10213,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5048974, y: 2.4998677, z: 0.1599536}
   m_Center: {x: -1.2523066, y: -0.000008106231, z: -0.000008981675}
+--- !u!95 &3528928516090196402
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168768021244334181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a8d03d9cd1034d4da4549d0d70c9bb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3532731760416769131
 GameObject:
   m_ObjectHideFlags: 0
