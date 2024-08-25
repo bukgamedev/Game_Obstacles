@@ -7090,6 +7090,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: c6b385c8e8ee33f47bf60b40c9e51084, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: c6b385c8e8ee33f47bf60b40c9e51084, type: 2}
+  - {fileID: 7400000, guid: 7e47661ac0f7991479464021c79247f8, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -15703,7 +15704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: -270}
 --- !u!1 &8769556521170670839
 GameObject:
   m_ObjectHideFlags: 0
