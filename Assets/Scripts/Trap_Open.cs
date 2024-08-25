@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trap_Open : MonoBehaviour
 {
     public GameObject Trap_Door; //Trapdoor objesi
-    private void OnTriggerEnter()
+    void OnTriggerEnter()
     {
         Debug.Log("Tuzaða temas edildi.");
         Trap_Door.GetComponent<Animation>().Play("TrapDoorAnim"); //Trap_Door objesinin Animation componentine eriþ ve TrapDoor adýndaki animasyonu oynat.
