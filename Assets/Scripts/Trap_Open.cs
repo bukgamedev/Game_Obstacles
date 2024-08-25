@@ -8,6 +8,6 @@ public class Trap_Open : MonoBehaviour
     private void OnTriggerEnter()
     {
         Debug.Log("Tuzaða temas edildi.");
-        Trap_Door.GetComponent<Animation>().Play("TrapDoor"); //Trap_Door objesinin Animation componentine eriþ ve TrapDoor adýndaki animasyonu oynat.
+        Trap_Door.GetComponent<Animation>().Play("TrapDoorAnim"); //Trap_Door objesinin Animation componentine eriþ ve TrapDoor adýndaki animasyonu oynat.
     }
 }
