@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float BounceForce = 10;
+    public void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            Rigidbody PlayerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            if (PlayerRigidbody!=null)
+            {
+                //PlayerRigidbody null deðilse Güç uygulanacak
+            }
+        }
     }
 }
