@@ -13,6 +13,7 @@ public class Trampoline : MonoBehaviour
             if (PlayerRigidbody!=null)
             {
                 //PlayerRigidbody null deðilse Güç uygulanacak
+                PlayerRigidbody.AddForce(Vector3.up * BounceForce,ForceMode.Impulse);
             }
         }
     }
