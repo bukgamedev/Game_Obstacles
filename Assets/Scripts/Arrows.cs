@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class Arrows : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    public GameObject Arrow; //Ok objesi
+    private void OnTriggerEnter(Collider other)
     {
         
     }
