@@ -3,7 +3,32 @@ guid: 5b1550d1aedd6364b8cd703373fde218
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cast Iron Blanched
+    second: {fileID: 2100000, guid: 449130239ec90c94f8076967a340543f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Forged Iron
+    second: {fileID: 2100000, guid: 007558a35306da4449c6878e3dc338dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Metal
+    second: {fileID: 2100000, guid: 1a233908437268249a251dafc78ebd07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic Red
+    second: {fileID: 2100000, guid: ad86e3ad5dd428c4abf6bf7d2133555e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood.001
+    second: {fileID: 2100000, guid: 9d6376dbf92fedc489fda66493547eed, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
