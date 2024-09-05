@@ -11,6 +11,10 @@ public class Arrows : MonoBehaviour
     void OnTriggerEnter()
     {
         Debug.Log("Ok Trigger'ýna girildi.");
-        //Arrow[].GetComponent<Animation>().Play("Arrows");
+        //Arrow[].GetComponent<Animation>().Play("Arrows")
+    }
+    IEnumerator DropArrows() //Oklarýn yukarýdan düþmesini saðlamak için.
+    {
+
     }
 }
