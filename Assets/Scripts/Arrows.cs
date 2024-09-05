@@ -8,10 +8,16 @@ public class Arrows : MonoBehaviour
     public float delayBetweenArrows = 0.5f; // Oklar arasýndaki gecikme süresi
     private bool triggered = false; // Tekrar tetiklenmesini engellemek için
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ok Trigger'ýna girildi.");
-        //Arrow[].GetComponent<Animation>().Play("Arrows")
+        {
+            if (!triggered && other.CompareTag("Player")) // Sadece oyuncu tetikleyince ve sadece bir kez
+            {
+                Debug.Log("Ok Trigger'ýna girildi.");
+                triggered = true;
+                StartCoroutine(DropArrows());
+            }
+        }
     }
     IEnumerator DropArrows() //Oklarýn yukarýdan düþmesini saðlamak için.
     {
