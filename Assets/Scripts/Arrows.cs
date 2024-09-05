@@ -5,8 +5,9 @@ using UnityEngine;
 public class Arrows : MonoBehaviour
 {
     public GameObject Arrow; //Ok objesi
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter()
     {
-        
+        Debug.Log("Ok Trigger'ýna girildi.");
+        Arrow.GetComponent<Animation>().Play("Arrows");
     }
 }
