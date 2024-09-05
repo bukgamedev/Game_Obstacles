@@ -15,6 +15,11 @@ public class Arrows : MonoBehaviour
     }
     IEnumerator DropArrows() //Oklarýn yukarýdan düþmesini saðlamak için.
     {
+        foreach (GameObject arrow in Arrow)
+        {
+            arrow.GetComponent<Animation>().Play("Arrows"); // Okun düþme animasyonu
+            yield return new WaitForSeconds(delayBetweenArrows); // Oklar arasýnda bekleme süresi
+        }
 
     }
 }
