@@ -5,8 +5,8 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    TextMeshProUGUI TimerText;
-    float ElapsedTime; //Geçen süre 
+    public TextMeshProUGUI TimerText;
+    public float ElapsedTime; //Geçen süre 
 
     private void Update()
     {
