@@ -5,14 +5,14 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public TextMeshProUGUI TimerText;
-     float ElapsedTime; //Geçen süre 
+    [SerializeField] TextMeshProUGUI TimerText;
+    float ElapsedTime; //Geçen süre 
 
     private void Update()
     {
         ElapsedTime = Time.deltaTime;
-        int minutes = Mathf.FloorToInt(ElapsedTime / 60);
-        int seconds = Mathf.FloorToInt(ElapsedTime % 60);
+        int minutes = Mathf.FloorToInt(ElapsedTime / 60); //Geçen dakikayý bulmak için 
+        int seconds = Mathf.FloorToInt(ElapsedTime % 60); //Geçen saniyeyi bulmak için
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
