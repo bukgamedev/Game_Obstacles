@@ -6,11 +6,13 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
-    public float ElapsedTime; //Geçen süre 
+     float ElapsedTime; //Geçen süre 
 
     private void Update()
     {
         ElapsedTime = Time.deltaTime;
-        TimerText.text = ElapsedTime.ToString();
+        int minutes = Mathf.FloorToInt(ElapsedTime / 60);
+        int seconds = Mathf.FloorToInt(ElapsedTime % 60);
+        TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
