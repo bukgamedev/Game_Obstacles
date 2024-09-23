@@ -9,8 +9,8 @@ public class Timer : MonoBehaviour
     float ElapsedTime; //Geçen süre 
 
     private void Update()
-    {
-        ElapsedTime = Time.deltaTime;
+    {// durdurma iþlemi için de kodlar eklenecek...
+        ElapsedTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(ElapsedTime / 60); //Geçen dakikayý bulmak için 
         int seconds = Mathf.FloorToInt(ElapsedTime % 60); //Geçen saniyeyi bulmak için
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
